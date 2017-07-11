@@ -1,4 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--   
+    xmlns 声明默认的命名空间  
+    xmlns:context 声明context命名空间  
+    xmlns:p 声明p命名空间，用于简化spring配置文件中属性声明的写法   
+    xmlns:mvc 声明mvc命名空间  
+    xmlns:xsi 声明XML Schema实例名称空间，并将xsi前缀与该命名空间绑定  
+    xsi:schemaLocation 引入Schema模式文档，解析器使用文档对xml进行校验，它的值是成对出现的，  
+        第一个表示命名空间，第二个表示该命名空间模式文档位置，中间用空格隔开  
+    如果抛出Failed to read schema document异常，是因为无法访问网址  
+ -->  
+ 
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
 	xmlns:context="http://www.springframework.org/schema/context"
@@ -17,4 +28,7 @@
 		<property name="prefix" value="/WEB-INF/jsp/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
+	<!-- 配置资源映射 -->
+	<mvc:resources location="/WEB-INF/js/" mapping="/js/**"/>
+	<mvc:resources location="/WEB-INF/css/" mapping="/css/**"/>
 </beans>        

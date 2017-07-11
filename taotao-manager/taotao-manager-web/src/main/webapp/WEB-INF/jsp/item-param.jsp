@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>淘淘商城后台欢迎页面</h1>
+${html }
 </body>
 </html>
