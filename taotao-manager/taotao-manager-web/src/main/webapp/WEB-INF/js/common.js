@@ -116,13 +116,13 @@ var TT = TAOTAO = {
     			.window({
     				width:'500',
     			    height:"450",
-    			    modal:true,
+    			    modal:true,//弹出框后面的页面不可点击
     			    closed:true,
     			    iconCls:'icon-save',
     			    title:'选择类目',
     			    onOpen : function(){
     			    	var _win = this;
-    			    	$("ul",_win).tree({
+    			    	$("ul",_win).tree({//树形控件
     			    		url:'/item/cat/list',
     			    		animate:true,
     			    		onClick : function(node){

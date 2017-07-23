@@ -3,7 +3,7 @@ package com.taotao.common.pojo;
 import java.util.List;
 
 /**
- * EasyUI DataGrid的返回值类型
+ * EasyUI 列表数据的包装类
  */
 public class EasyUIDataGridResult {
 
