@@ -32,11 +32,13 @@ public class FTPClientTest {
 		}
 
 	}
-	
-	 @Test
-	    public void testFastDFS() throws Exception{
-	        FastDFSClient fastDFSClient = new FastDFSClient("classpath:properties/client.conf");///taotao-manager-web/src/test/resources/properties/client.conf
-	        String url = fastDFSClient.uploadFile("D:\\Dropbox\\Image\\Wallpaper\\76OAPLJ62G1V0031.jpg");
-	        System.out.println(url); //group1/M00/00/00/76OAPLJ62G1V0031.png
-	    }
+
+	@Test
+	public void testFastDFS() throws Exception {
+		//添加配置
+		FastDFSClient fastDFSClient = new FastDFSClient("classpath:properties/client.conf");/// 必须在测试包下也存在配置文件：taotao-manager-web/src/test/resources/properties/client.conf
+		//上传指定图片
+		String url = fastDFSClient.uploadFile("D:\\Dropbox\\Image\\Wallpaper\\76OAPLJ62G1V0031.jpg");
+		System.out.println(url); // group1/M00/00/00/76OAPLJ62G1V0031.png
+	}
 }
