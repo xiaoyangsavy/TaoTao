@@ -15,6 +15,7 @@ public class PictureServiceImpl implements IPictureService {
 	@Value("${SERVER_URL}")
 	private String SERVER_URL;
 	
+	//上传图片
 	@Override
 	public PictureResult uploadPicture(MultipartFile picFile) {
 
