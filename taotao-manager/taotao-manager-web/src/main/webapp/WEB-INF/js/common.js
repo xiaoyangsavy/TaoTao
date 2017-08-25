@@ -146,7 +146,7 @@ var TT = TAOTAO = {
     	});
     },
     
-    createEditor : function(select){
+    createEditor : function(select){	//创建富文本编辑器
     	return KindEditor.create(select, TT.kingEditorParams);
     },
     

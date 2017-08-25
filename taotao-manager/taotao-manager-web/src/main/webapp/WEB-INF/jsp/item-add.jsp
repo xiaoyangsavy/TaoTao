@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <link href="/js/kindeditor-4.1.10/themes/default/default.css" type="text/css" rel="stylesheet">
+<!-- 富文本编辑器，加密压缩文件 -->
 <script type="text/javascript" charset="utf-8" src="/js/kindeditor-4.1.10/kindeditor-all-min.js"></script>
+<!-- 富文本编辑器，语言包 -->
 <script type="text/javascript" charset="utf-8" src="/js/kindeditor-4.1.10/lang/zh_CN.js"></script>
 <div style="padding:10px 10px 10px 10px">
 	<form id="itemAddForm" class="itemForm" method="post">
@@ -45,7 +47,7 @@
 	        </tr>
 	        <tr>
 	            <td>商品描述:</td>
-	            <td>
+	            <td><!-- 使用textarea作为富文本编辑器的数据源，设置为不可见 -->
 	                <textarea style="width:800px;height:300px;visibility:hidden;" name="desc"></textarea>
 	            </td>
 	        </tr>
@@ -68,7 +70,7 @@
 	//页面初始化完毕后执行此方法
 	$(function(){
 		//创建富文本编辑器
-		itemAddEditor = TAOTAO.createEditor("#itemAddForm [name=desc]");
+		itemAddEditor = TAOTAO.createEditor("#itemAddForm [name=desc]");//jquery选择器，找到指定控件
 		//初始化类目选择和图片上传器
 		TAOTAO.init({fun:function(node){
 			//根据商品的分类id取商品 的规格模板，生成规格信息。第四天内容。
@@ -84,7 +86,7 @@
 		}
 		//取商品价格，单位为“分”
 		$("#itemAddForm [name=price]").val(eval($("#itemAddForm [name=priceView]").val()) * 100);
-		//同步文本框中的商品描述
+		//同步富文本框中的商品描述，将生成的html存入到关联的textarea中
 		itemAddEditor.sync();
 		//取商品的规格
 		var paramJson = [];
